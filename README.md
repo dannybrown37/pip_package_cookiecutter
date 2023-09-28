@@ -3,5 +3,5 @@
 ## installation/usage
 
 ``` bash
-    cookiecutter https://www.github.com/dannybrown37/pip_package_cookiecutter
+cookiecutter https://www.github.com/dannybrown37/pip_package_cookiecutter
 ```
