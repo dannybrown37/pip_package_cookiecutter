@@ -1,5 +1,5 @@
 [project]
-name = "{{cookiecutter.project_name}}"
+name = "{{cookiecutter.project_title}}"
 dynamic = [
     "version",
 ]
@@ -9,11 +9,11 @@ authors = [
     { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }
 ]
 dependencies = [
-
+  {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %}
 ]
 
 [project.urls]
-homepage = "https://github.com/{{cookiecutter.author_github_username}}/{{cookiecutter.project_name}}"
+homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}"
 
 
 [project.scripts]
@@ -101,3 +101,6 @@ target-version = "py311"
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "single"
+
+[pytest]
+testpaths = "tests/"

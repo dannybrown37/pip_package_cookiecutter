@@ -1,7 +1,15 @@
 {
-    "project_name": "",
+
     "author_name": "Danny Brown",
     "author_email": "dannybrown37@gmail.com",
-    "author_github_username": "dannybrown37",
-    "ci_folder": "workflows"
+    "github_username": "dannybrown37",
+    "project_title": "Pip Package Boilerplate",
+    "project_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "Your project description goes here.",
+    "pypi_username": "{{ cookiecutter.github_username }}",
+    "version": "0.1.0",
+    "use_pytest": "y",
+    "command_line_interface": ["click", "argparse", "No command-line interface"],
+    "create_author_file": "y",
+    "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
 }
