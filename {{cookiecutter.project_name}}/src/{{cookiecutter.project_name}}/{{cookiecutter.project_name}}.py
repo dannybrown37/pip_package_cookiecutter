@@ -1,8 +1,8 @@
 
 
-def main():
+def {{cookiecutter.project_name}}():
     ...
 
 
 if __name__ == '__main__':
-    main()
+    {{cookiecutter.project_name}}()

@@ -3,7 +3,7 @@ import sys
 
 
 REMOVE_PATHS = [
-    f'{% if cookiecutter.command_line_interface|lower == "no command-line interface" %} {{cookiecutter.project_name}}/src/{{cookiecutter.project_name}}/__main__.py {% endif %}',
+    f'{%- if cookiecutter.command_line_interface|lower == "no cli" %}src/{{cookiecutter.project_name}}/__main__.py{%- endif %}',
 ]
 
 
