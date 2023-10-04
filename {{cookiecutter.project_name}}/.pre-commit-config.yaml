@@ -24,13 +24,13 @@ repos:
   - repo: local
     hooks:
       - id: pytest
-        name: Pytest
+        name: Run tests with pytest
         always_run: true
         entry: pytest tests -s -vvl
         language: system
         types: [python]
       - id: ruff
-        name: Ruff
+        name: Run ruff on src/ and tests/ directories
         entry: ruff src tests
         language: system
         types: [python]

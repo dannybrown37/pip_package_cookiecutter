@@ -101,5 +101,6 @@ target-version = "py311"
 [tool.ruff.flake8-quotes]
 inline-quotes = "single"
 
-[pytest]
-testpaths = "tests/"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ""

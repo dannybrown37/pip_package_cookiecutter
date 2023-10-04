@@ -4,16 +4,13 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set CI environment variable
-        run: echo "CI=true" >> $GITHUB_ENV
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
