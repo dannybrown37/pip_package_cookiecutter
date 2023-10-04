@@ -14,23 +14,29 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.9
+
     - name: Install distribution dependencies
       run: |
         pip install -U pip
         pip install .[pypi]
+
     - name: Build distribution
       run: hatchling build
+
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
         {% raw %}TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}{% endraw %}
       run: twine upload dist/*
+
     - name: pip install {{cookiecutter.project_name}}
       run: pip install {{cookiecutter.project_name}}
+
     - name: Compare Repo and Pip Versions
       run: |
         repo_version=$(grep "__version__" src/{{cookiecutter.project_name}}/__init__.py | cut -d "'" -f 2)

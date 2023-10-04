@@ -12,11 +12,11 @@ import argparse
 @click.command()
 @click.option('--arg', '-a', help='', type=str)
 def main(arg):
-    """Console script for {{cookiecutter.project_name}}."""
+    """Console script for {{ cookiecutter.project_name }}"""
     return arg
 {%- elif cookiecutter.command_line_interface|lower == 'argparse' %}
 def main():
-    """Console script for {{cookiecutter.project_name}}."""
+    """Console script for {{ cookiecutter.project_name }}"""
     parser = argparse.ArgumentParser()
     parser.add_argument('--arg', '-a', nargs='*')
     args = parser.parse_args()

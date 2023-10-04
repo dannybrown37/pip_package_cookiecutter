@@ -19,16 +19,13 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Install {{cookiecutter.project_name}} test dependencies
+      - name: Install {{cookiecutter.project_name}} test and dev dependencies
         run: |
           pip install -U pip
-          pip install .[test]
+          pip install .[test,dev]
 
       - name: Run tests
         run: pytest tests -s -vvl
-
-      - name: Install {{cookiecutter.project_name}} dev dependencies
-        run: pip install .[dev]
 
       - name: Run ruff
         run: ruff src tests

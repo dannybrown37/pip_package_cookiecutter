@@ -1,22 +1,22 @@
 [project]
-name = "{{cookiecutter.project_title}}"
+name = "{{ cookiecutter.project_name }}"
 dynamic = [
   "version",
 ]
-description = ""
+description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
 authors = [
-  { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }
+  { name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}" }
 ]
 dependencies = [
   {% if cookiecutter.command_line_interface|lower == 'click' %}"Click>=7.0",{% endif %}
 ]
 
 [project.urls]
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}"
+homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}"
 {% if cookiecutter.command_line_interface|lower != 'no cli' %}
 [project.scripts]
-{{cookiecutter.project_name}} = "{{cookiecutter.project_name}}:main"
+{{ cookiecutter.project_name }} = "{{ cookiecutter.project_name }}:main"
 {% endif %}
 [project.optional-dependencies]
 dev = [
@@ -102,5 +102,6 @@ target-version = "py311"
 inline-quotes = "single"
 
 [tool.pytest.ini_options]
+minversion = "6.0"
 testpaths = ["tests"]
 addopts = ""
