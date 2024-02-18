@@ -3,5 +3,9 @@
 ## installation/usage
 
 ``` bash
-cookiecutter https://www.github.com/dannybrown37/pip_package_cookiecutter
+    python -m venv .tempvenv
+    source .tempvenv/bin/activate
+    pip install cookiecutter
+    cookiecutter https://www.github.com/dannybrown37/pip_package_cookiecutter
+    rm -rf .tempvenv
 ```
